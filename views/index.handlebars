@@ -1,0 +1,25 @@
+<div>
+  <div class='d-md-flex justify-content-between'>
+    <ul class='list-group w-50 me-5'>
+      {{#each products}}
+        <li class='list-group-item'>
+          <div><span class='fw-bold'>Product ID:</span> {{{this.id}}}</div>
+          <div class='text-capitalize lead'>{{{this.name}}}</div>
+          <div class='fw-bold text-primary'>${{{this.price}}}</div>
+        </li>
+      {{/each}}
+    </ul>
+    <form action='/api/products' method='POST' class='w-50'>
+      <div class='form-group mb-3'>
+        <label for='name'>Name: </label>
+        <input type='text' name='name' id='name' class='form-control' />
+      </div>
+      <div class='form-group mb-3'>
+        <label for='price'>Price: </label>
+        <input type='number' name='price' id='price' class='form-control' />
+      </div>
+      <button class='btn btn-primary btn-block mt-3' type='submit'>Add Product</button>
+    </form>
+  </div>
+  <a href='/api/products' class='btn btn-light mt-4'>Visit API</a>
+</div>
